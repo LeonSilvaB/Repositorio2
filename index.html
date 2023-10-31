@@ -13,7 +13,8 @@
     <p class="phone"></p>
     <p class="website"></p>
     <p class="addressstreet"></p>
-    <p class="company"></p>
+    <p class="companyname"></p>
+    <p class="companycatchPhrase"></p>
 
     <script>
         async function getUsers () {
@@ -26,7 +27,9 @@
             document.querySelector(".phone").innerText = posts.phone
             document.querySelector(".website").innerText = posts.website
             document.querySelector(".addressstreet").innerText = posts.address.street
-            document.querySelector(".company").innerText = posts.company.name
+            document.querySelector(".companyname").innerText = posts.company.name
+            document.querySelector(".companycatchPhrase").innerText = posts.company.catchPhrase
+            
 
             
         }
