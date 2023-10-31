@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick ="getUsers () ">Teste</button>
+    <h1 class="name"></h1>
+    <p class="user"></p>
+    <p class="email"></p>
+    <p class="phone"></p>
+    <p class="website"></p>
+    <p class="addressstreet"></p>
+    <p class="company"></p>
+
+    <script>
+        async function getUsers () {
+            const resp = await fetch ("https://jsonplaceholder.typicode.com/users/1")
+            const posts = await resp.json ()
+
+            document.querySelector(".name").innerText = posts.name
+            document.querySelector(".user").innerText = posts.username
+            document.querySelector(".email").innerText = posts.email
+            document.querySelector(".phone").innerText = posts.phone
+            document.querySelector(".website").innerText = posts.website
+            document.querySelector(".addressstreet").innerText = posts.address.street
+            document.querySelector(".company").innerText = posts.company.name
+
+            
+        }
+
+    </script>
+</body>
+</html>
