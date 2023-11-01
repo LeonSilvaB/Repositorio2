@@ -5,18 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<header>
+    <main id="main">
+        <section class="card">
+            <h2 class="card-title">Lista de Usuarios</h2>
+            <table class="card-table"></table>
+        </section>
+    </main>
+</header>
 <body>
-    <button onclick ="getUsers () ">Teste</button>
-    <h1 class="name"></h1>
+    <button onclick ="getUser1() ">USUARIO 1</button>
+    <p class="name"></p>
     <p class="user"></p>
     <p class="email"></p>
     <p class="phone"></p>
     <p class="website"></p>
     <p class="addressstreet"></p>
     <p class="company"></p>
+    <p class="companyPhrase"></p>
+
+    <table>
+        <button onclick ="getUser2() ">USUARIO 2</button>
+    <p class="phone2"></p>
+    <p class="website2"></p>
+    <p class="addressstreet2"></p>
+    <p class="company2"></p>
+    <p class="companyPhrase2"></p>
+
+        <thead>
+            <tr>
+                <th>| Nome |</th>
+                <th>| Usuario |</th>
+                <th>| Email |</th>
+                <th>| Outras informações |</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <td><p class="nome"></p></td>
+            <td><p class="usuario2"></p></td>
+            <td><p class="email2"></p></td>
+            <td><p><button onclick ="getUser2() ">Exibir</p></button></td>
+        </tbody>
+    </table>
+    <table>
+        <tbody></tbody>
+    </table>
 
     <script>
-        async function getUsers () {
+        async function getUser2() {
+            const resp = await fetch ("https://jsonplaceholder.typicode.com/users/2")
+            const posts = await resp.json ()
+
+            document.querySelector(".nome").innerText = posts.name
+            document.querySelector(".usuario2").innerText = posts.username
+            document.querySelector(".email2").innerText = posts.email
+            document.querySelector(".phone2").innerText = posts.phone
+            document.querySelector(".website2").innerText = posts.website
+            document.querySelector(".addressstreet2").innerText = `${posts.address.street}, ${posts.address.city}, ${posts.address.zipcode}` 
+            document.querySelector(".company2").innerText = posts.company.name
+            document.querySelector(".companyPhrase2").innerText = posts.company.catchPhrase
+        }
+    </script>
+
+    <script>
+        async function getUser1() {
             const resp = await fetch ("https://jsonplaceholder.typicode.com/users/1")
             const posts = await resp.json ()
 
@@ -25,12 +79,13 @@
             document.querySelector(".email").innerText = posts.email
             document.querySelector(".phone").innerText = posts.phone
             document.querySelector(".website").innerText = posts.website
-            document.querySelector(".addressstreet").innerText = posts.address.street
+            document.querySelector(".addressstreet").innerText = `${posts.address.street}, ${posts.address.city}, ${posts.address.zipcode}` 
             document.querySelector(".company").innerText = posts.company.name
-
-            
+            document.querySelector(".companyPhrase").innerText = posts.company.catchPhrase
         }
-
     </script>
+
+
+
 </body>
 </html>
