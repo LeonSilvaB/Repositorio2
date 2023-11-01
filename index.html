@@ -22,6 +22,7 @@
     <p class="phone"></p>
     <p class="website"></p>
     <p class="addressstreet"></p>
+<<<<<<< HEAD
     <p class="company"></p>
     <p class="companyPhrase"></p>
 
@@ -52,6 +53,10 @@
     <table>
         <tbody></tbody>
     </table>
+=======
+    <p class="companyname"></p>
+    <p class="companycatchPhrase"></p>
+>>>>>>> f25cd67bfac6e18d21109040b549797ef4af0fc0
 
     <script>
         async function getUser2() {
@@ -79,9 +84,18 @@
             document.querySelector(".email").innerText = posts.email
             document.querySelector(".phone").innerText = posts.phone
             document.querySelector(".website").innerText = posts.website
+<<<<<<< HEAD
             document.querySelector(".addressstreet").innerText = `${posts.address.street}, ${posts.address.city}, ${posts.address.zipcode}` 
             document.querySelector(".company").innerText = posts.company.name
             document.querySelector(".companyPhrase").innerText = posts.company.catchPhrase
+=======
+            document.querySelector(".addressstreet").innerText = posts.address.street
+            document.querySelector(".companyname").innerText = posts.company.name
+            document.querySelector(".companycatchPhrase").innerText = posts.company.catchPhrase
+            
+
+            
+>>>>>>> f25cd67bfac6e18d21109040b549797ef4af0fc0
         }
     </script>
 
